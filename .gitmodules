@@ -19,3 +19,6 @@
 [submodule "Assets/OpenIMPRESS/oi.plugin.linedrawing"]
 	path = Assets/OpenIMPRESS/oi.plugin.linedrawing
 	url = https://github.com/OpenIMPRESS/oi.plugin.linedrawing.git
+[submodule "Assets/OpenIMPRESS/oi.plugin.leapmotion"]
+	path = Assets/OpenIMPRESS/oi.plugin.leapmotion
+	url = https://github.com/OpenIMPRESS/oi.plugin.leapmotion.git
