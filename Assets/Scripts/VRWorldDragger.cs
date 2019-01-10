@@ -72,8 +72,9 @@ public class VRWorldDragger : MonoBehaviour {
             WandController wand = (left) ? wandLeft : wandRight;
             transform.position -= wand.deltaPos;
         } else if (left_T && right_T) {
-            manipulatedTransform.position = Vector3.Slerp(manipulatedTransform.position, startPosition, Time.time * slerpBackSpeed);
-            manipulatedTransform.rotation = Quaternion.Slerp(manipulatedTransform.rotation, startRotation, Time.time * slerpBackSpeed);
+            reset = true;
+            //manipulatedTransform.position = Vector3.Slerp(manipulatedTransform.position, startPosition, Time.time * slerpBackSpeed);
+            //manipulatedTransform.rotation = Quaternion.Slerp(manipulatedTransform.rotation, startRotation, Time.time * slerpBackSpeed);
         }
         /*
         else if (setToReview) {
@@ -81,8 +82,11 @@ public class VRWorldDragger : MonoBehaviour {
             setToReview = false;
         } */
         
-        else if (reset) {
-            Reset();
+        if (reset) {
+            //Reset();
+            wandLeft.lineDrawCapture.resetDrawings = true;
+            wandRight.lineDrawCapture.resetDrawings = true;
+            Debug.Log("RESET DRAWINGS");
             reset = false;
         }
 

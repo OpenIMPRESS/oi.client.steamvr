@@ -56,8 +56,12 @@ public class WandController : MonoBehaviour {
 
         if (Valve.VR.SteamVR_Input._default.inActions.Teleport.GetLastStateDown(pose.inputSource) && !thumbPress) {
             thumbPress = true;
+            lineDrawCapture.mode = oi.plugin.linedrawing.LineDrawMode.erase;
+            lineDrawCapture.SetButtonDown(true);
         } else if (Valve.VR.SteamVR_Input._default.inActions.Teleport.GetLastStateUp(pose.inputSource) && thumbPress) {
             thumbPress = false;
+            lineDrawCapture.SetButtonDown(false);
+            lineDrawCapture.mode = oi.plugin.linedrawing.LineDrawMode.draw;
         }
 
         if (interacting) {
